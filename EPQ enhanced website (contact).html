@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Healthy Eating - Contact</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background-color: #333;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+    }
+    nav a:hover, nav a:focus {
+      background-color: #4CAF50;
+    }
+    .breadcrumb {
+      padding: 10px 20px;
+      background: #eee;
+      font-size: 14px;
+    }
+    .container {
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea, select, button {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #success-message {
+      color: green;
+      margin-top: 10px;
+      display: none;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Healthy Eating - Contact</h1>
+    <p>Contact for more information</p>
+  </header>
+
+  <nav>
+    <a href="EPQ enhanced website.html">Home</a>
+    <a href="EPQ enhanced website (tips).html">Tips</a>
+    <a href="EPQ enhanced website (mealplans).html">Meal Plans</a>
+    <a href="EPQ enhanced website (recipes).html">Recipes</a>
+    <a href="EPQ enhanced website (contact).html">Contact</a>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="EPQ enhanced website.html">Home</a> > Contact
+  </div>
+
+  <div class="container">
+    <h2>Contact Us</h2>
+    <form onsubmit="return validateForm()">
+      <label for="FirstName">First Name:</label>
+      <input type="text" id="FirstName" name="FirstName" required>
+
+      <label for="LastName">Last Name:</label>
+      <input type="text" id="LastName" name="LastName" required>
+
+      <label for="Email">Email:</label>
+      <input type="email" id="Email" name="Email" required>
+
+      <label for="Reason">Reason for Contact:</label>
+      <select id="Reason" name="Reason" required>
+        <option value="">--Please choose an option--</option>
+        <option value="advice">Healthy eating advice</option>
+        <option value="feedback">Website feedback</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="Message">Message:</label>
+      <textarea id="Message" name="Message" rows="5" maxlength="200" required></textarea>
+      <small id="charCount">0/200 characters</small>
+
+      <button type="submit">Submit</button>
+      <p id="success-message">✅ Thank you! Your message has been sent.</p>
+    </form>
+  </div>
+
+  <footer>
+    © 2025 Healthy Eating Tips | Contact us: info@healthyeating.com
+  </footer>
+
+  <script>
+    // Show character count
+    const textarea = document.getElementById('Message');
+    const charCount = document.getElementById('charCount');
+    textarea.addEventListener('input', () => {
+      charCount.textContent = `${textarea.value.length}/200 characters`;
+    });
+
+    // Form validation + feedback
+    function validateForm() {
+      document.getElementById('success-message').style.display = "block";
+      return false; // prevent page reload
+    }
+  </script>
+</body>
+</html>
